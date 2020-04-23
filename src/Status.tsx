@@ -15,6 +15,7 @@ const Status: React.SFC<StatusProps> = (props) => {
     resolution = <code>Disaster!</code>;
   }
 
+  // tslint:disable-next-line: no-any
   const facts: { [k: string]: any } = {
     status: resolution,
     moveCount: props.moveCount,

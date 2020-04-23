@@ -52,6 +52,6 @@ class Cell extends React.Component<CellProps> {
       </button>
     );
   }
-};
+}
 
 export default Cell;
