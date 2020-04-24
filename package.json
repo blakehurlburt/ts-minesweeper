@@ -1,4 +1,5 @@
 {
+  "homepage": "http://blakehurlburt.github.io/ts-minesweeper",
   "name": "ts-minesweeper",
   "version": "0.1.0",
   "private": true,
@@ -6,6 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "font-awesome": "^4.7.0",
+    "gh-pages": "^2.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.1.0",
     "react-redux": "^7.2.0",
@@ -14,6 +16,8 @@
     "typescript": "^3.8.3"
   },
   "scripts": {
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
@@ -26,6 +30,5 @@
     "@types/react-dom": "^16.0.3",
     "@types/react-redux": "^7.1.7",
     "@types/redux": "^3.6.0"
-  },
-  "homepage": "https://ts-minesweeper.surge.sh"
+  }
 }
