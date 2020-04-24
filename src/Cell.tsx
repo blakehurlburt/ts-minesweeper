@@ -5,23 +5,29 @@ import * as minesweeper from './minesweeper';
 import './Cell.css';
 
 type CellProps = minesweeper.Cell & {
-  onClick(): void
-  onCtrlClick(): void
+  onLeftClick(): void
+  onRightClick(): void
 };
 
 class Cell extends React.Component<CellProps> {
   constructor(props: CellProps) {
     super(props);
     this.onClick = this.onClick.bind(this);
+    this.onContextMenu = this.onContextMenu.bind(this);
   }
 
   onClick(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
     if (e.ctrlKey) {
-      this.props.onCtrlClick();
+      this.props.onRightClick();
     } else {
-      this.props.onClick();
+      this.props.onLeftClick();
     }
+  }
+
+  onContextMenu(e: React.MouseEvent<HTMLButtonElement>) {
+    e.preventDefault();
+    this.props.onRightClick();
   }
 
   render() {
@@ -47,6 +53,7 @@ class Cell extends React.Component<CellProps> {
       <button
         className={className}
         onClick={this.onClick}
+        onContextMenu={this.onContextMenu}
       >
         {icon}
       </button>

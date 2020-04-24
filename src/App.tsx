@@ -51,8 +51,8 @@ class App extends React.Component<Props> {
               <Cell
                 {...cellsByXy[xy]}
                 key={xy}
-                onClick={() => this.props.revealLocation({ xy })}
-                onCtrlClick={() => this.props.flagLocation({ xy })}
+                onLeftClick={() => this.props.revealLocation({ xy })}
+                onRightClick={() => this.props.flagLocation({ xy })}
               />
             ))}
           </div>
@@ -66,8 +66,8 @@ class App extends React.Component<Props> {
       <div className="root">
         <h1>ts-minesweeper</h1>
         <p>
-          <code>click</code>: reveal; &nbsp;
-          <code>ctrl + click</code>: flag / reveal
+          <code>left-click</code>: reveal; &nbsp;
+          <code>right-click</code>: flag / reveal
           <button onClick={this.resetGame}>
             <i className="fa fa-refresh" /> restart
           </button>
