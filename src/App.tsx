@@ -92,7 +92,7 @@ const mapStateToProps = (state: minesweeper.Game): StateProps => {
   return { ...state, grid };
 };
 
-const mapDispatchToProps = (dispatch: redux.Dispatch<store.Action>): DispatchProps =>
+const mapDispatchToProps = (dispatch: redux.Dispatch<redux.AnyAction>): DispatchProps =>
   redux.bindActionCreators(store.actions, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
